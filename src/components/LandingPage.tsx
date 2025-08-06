@@ -7,6 +7,7 @@ import InformationCategories from "./InformationCategories"
 import RequestForm from "./RequestForm"
 import Contact from "./Contact"
 import LoginForm from "./LoginForm"
+import AboutPPID from "./AboutPPID"
 // import Header from "./Header"     // ✅ tambahkan ini
 // import Footer from "./Footer"     // ✅ tambahkan ini
 
@@ -18,10 +19,11 @@ export default function LandingPage() {
         {/* <Header /> */}
         <div className="min-h-screen bg-white">
             <Hero />
-            <News />
+            <AboutPPID />
             <Services />
             <InformationCategories />
             <RequestForm />
+            <News />
             <Contact />
         </div>
         {/* <Footer /> */}

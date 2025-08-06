@@ -28,10 +28,11 @@ export default function Header({ onLoginClick, isLoggedIn, onLogout }: HeaderPro
 
   const navItems = [
     { label: "Beranda", section: "beranda" },
-    { label: "Berita", section: "berita" },
+    { label: "Tentang", section: "tentang-ppid" },
     { label: "Layanan", section: "layanan" },
     { label: "Informasi Publik", section: "informasi" },
     { label: "Permohonan", section: "permohonan" },
+    { label: "Berita", section: "berita" },
     { label: "Kontak", section: "kontak" },
   ]
 

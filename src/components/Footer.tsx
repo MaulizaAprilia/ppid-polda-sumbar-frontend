@@ -61,6 +61,14 @@ export default function Footer() {
               </li>
               <li>
                 <button
+                  onClick={() => scrollToSection("tentang-ppid")}
+                  className="text-gray-300 hover:text-white transition-colors text-left"
+                >
+                  Tentang
+                </button>
+              </li>
+              <li>
+                <button
                   onClick={() => scrollToSection("berita")}
                   className="text-gray-300 hover:text-white transition-colors text-left"
                 >

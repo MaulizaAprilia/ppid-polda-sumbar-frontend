@@ -13,6 +13,7 @@ import UnduhDokumen from "./components/UnduhDokumen"
 import KeamananData from "./components/KeamananData"
 import RequestForm from "./components/RequestForm"
 import Contact from "./components/Contact"
+import AdminInformation from "./components/AdminInformation"
 
 
 function App() {
@@ -34,6 +35,8 @@ function App() {
           <Route path="keamanandata" element={<KeamananData />} />
           <Route path="permohonan" element={<RequestForm />} />
           <Route path="kontak" element={<Contact />} />
+          <Route path="/informasi" element={<AdminInformation />} />
+
         </Route>
       </Routes>
     </Router>

@@ -91,8 +91,8 @@ export default function Contact() {
         {/* Enhanced Map Section */}
         <div className="bg-gray-50 rounded-xl p-8">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Lokasi PPID Polda Sumbar</h3>
-            <p className="text-gray-600">Jl. Jenderal Sudirman No. 55, Padang, Sumatera Barat</p>
+            <h2 className="ext-3xl lg:text-4xl font-bold text-gray-900 mb-4">Lokasi PPID Polda Sumbar</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Jl. Jenderal Sudirman No. 55, Padang, Sumatera Barat</p>
           </div>
 
           {/* Map Type Toggle */}
@@ -101,7 +101,7 @@ export default function Contact() {
               <button
                 onClick={() => setMapType("embed")}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                  mapType === "embed" ? "bg-blue-600 text-white" : "text-gray-600 hover:text-gray-900"
+                  mapType === "embed" ? "bg-[#1e3a8a] hover:bg-blue-600 text-white" : "text-gray-600 hover:text-gray-900"
                 }`}
               >
                 Tampilkan Peta
@@ -109,7 +109,9 @@ export default function Contact() {
               <button
                 onClick={() => setMapType("link")}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                  mapType === "link" ? "bg-blue-600 text-white" : "text-gray-600 hover:text-gray-900"
+                  mapType === "link"
+                    ? "bg-[#1e3a8a] hover:bg-blue-600 text-white"
+                    : "text-gray-600 hover:text-gray-900"
                 }`}
               >
                 Tautan Peta
@@ -143,7 +145,7 @@ export default function Contact() {
                   <ExternalLink className="w-4 h-4 mr-1" />
                   Buka di Maps
                 </Button>
-                <Button onClick={openDirections} size="sm" className="bg-blue-600 hover:bg-blue-700 shadow-lg">
+                <Button onClick={openDirections} size="sm" className="bg-[#1e3a8a] hover:bg-blue-600 shadow-lg">
                   <Navigation className="w-4 h-4 mr-1" />
                   Petunjuk Arah
                 </Button>
@@ -193,7 +195,7 @@ export default function Contact() {
                       <Globe className="w-4 h-4 mr-2" />
                       Buka di Google Maps
                     </Button>
-                    <Button onClick={openDirections} className="w-full justify-start bg-blue-600 hover:bg-blue-700">
+                    <Button onClick={openDirections} className="w-full justify-start bg-[#1e3a8a] hover:bg-blue-600">
                       <Navigation className="w-4 h-4 mr-2" />
                       Dapatkan Petunjuk Arah
                     </Button>
@@ -202,7 +204,7 @@ export default function Contact() {
                         const wazeUrl = `https://waze.com/ul?ll=${latitude},${longitude}&navigate=yes`
                         window.open(wazeUrl, "_blank")
                       }}
-                      className="w-full justify-start bg-purple-600 hover:bg-purple-700"
+                      className="w-full justify-start bg-[#1e3a8a] hover:bg-blue-600"
                     >
                       <Navigation className="w-4 h-4 mr-2" />
                       Buka di Waze
@@ -212,8 +214,8 @@ export default function Contact() {
 
                 {/* Transportation Info */}
                 <div className="bg-blue-50 rounded-lg p-6">
-                  <h4 className="font-semibold text-blue-900 mb-3">Transportasi Umum</h4>
-                  <ul className="text-blue-800 text-sm space-y-2">
+                  <h4 className="font-semibold text-black mb-3">Transportasi Umum</h4>
+                  <ul className="text-gray-700 text-sm space-y-2">
                     <li>
                       🚌 <strong>Bus Trans Padang:</strong> Halte Sudirman
                     </li>

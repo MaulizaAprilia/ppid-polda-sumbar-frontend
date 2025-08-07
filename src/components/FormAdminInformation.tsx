@@ -109,7 +109,7 @@ export default function FormAdminInformation({
           type="submit"
           disabled={loading}
           className={`${
-            loading ? "bg-blue-400" : "bg-blue-600 hover:bg-blue-700"
+            loading ? "bg-blue-400" : "bg-[#1e3a8a] hover:bg-blue-600"
           } text-white px-4 py-2 rounded transition`}
         >
           {loading ? "Menyimpan..." : editData ? "Update" : "Simpan"}

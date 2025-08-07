@@ -13,6 +13,7 @@ import { Textarea } from "../components/ui/textarea"
 import { Select } from "../components/ui/select"
 import { FileText, Send } from "lucide-react"
 
+
 interface RequestFormProps {
   onSubmit?: (data: {
     name: string
@@ -169,10 +170,10 @@ export default function RequestForm({ onSubmit }: RequestFormProps) {
                       required
                     >
                       <option value="">Pilih kategori</option>
-                      <option value="berkala">Informasi Berkala</option>
-                      <option value="serta-merta">Informasi Serta Merta</option>
-                      <option value="setiap-saat">Informasi Setiap Saat</option>
-                      <option value="lainnya">Lainnya</option>
+                      <option value="Informasi Berkala">Informasi Berkala</option>
+                      <option value="Informasi Serta Merta">Informasi Serta Merta</option>
+                      <option value="Informasi Setiap Saat">Informasi Setiap Saat</option>
+                      <option value="Lainnya">Lainnya</option>
                     </Select>
                   </div>
                 </div>

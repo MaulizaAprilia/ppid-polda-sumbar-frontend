@@ -9,10 +9,13 @@ export default function AboutPPID() {
         <div className="container mx-auto px-4 max-w-6xl">
             {/* Heading */}
             <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                Tentang PPID POLDA Sumatera Barat
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                Tentang PPID 
+            </h1>
+            <h2 className="text-xl lg:text-4xl font-bold text-gray-900 mb-4">
+                Kepolisian Daerah Sumatera Barat
+            </h2>"
+            <p className="text-lg text-gray-600 mx-auto">
                 Mengenal Pejabat Pengelola Informasi dan Dokumentasi (PPID) di lingkungan Kepolisian Daerah Sumbar
             </p>
             </div>
@@ -87,11 +90,12 @@ export default function AboutPPID() {
             </article>
 
             {/* Kanan - Placeholder Gambar */}
-            <div className="flex-1 flex justify-center items-start pt-4">
-                <div className="w-full h-[500px] bg-gray-200 rounded-xl border border-dashed border-gray-400 flex items-center justify-center text-gray-500 text-sm">
-                logo_polda
-                </div>
-            </div>
+            <img
+                src="/logo_polda.png"
+                alt="Logo Polda Sumbar"
+                width={400}
+                height={400}
+                className="object-contain rounded-xl shadow-md"/>
             </div>
         </div>
         </section>

@@ -15,7 +15,7 @@ export default function AdminInformation() {
   const [data, setData] = useState<Informasi[]>([])
   const [loading, setLoading] = useState(true)
   const [editData, setEditData] = useState<Informasi | null>(null)
-  const navigate = useNavigate() // ← Tambahan: untuk tombol kembali
+  const navigate = useNavigate()
 
   const fetchInformasi = () => {
     setLoading(true)
@@ -60,30 +60,24 @@ export default function AdminInformation() {
   }, [])
 
   return (
-    <div className="p-6">
-      {/* Tombol Kembali */}
-      <button
-        onClick={() => navigate("/dashboard")}
-        className="mb-4 bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300 transition"
-      >
-        ← Kembali ke Dashboard
-      </button>
-
-      {/* Header */}
-      <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-gray-800">Daftar Informasi</h1>
+    <div className="p-6 max-w-7xl mx-auto text-gray-800">
+      <div className="flex justify-between items-center mb-6">
+        <button
+          onClick={() => navigate("/dashboard")}
+          className="bg-gray-100 hover:bg-gray-200 text-sm font-medium text-gray-700 px-4 py-2 rounded-xl shadow"
+        >
+          ← Kembali ke Dashboard
+        </button>
         <button
           onClick={fetchInformasi}
-          className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+          className="flex items-center gap-2 bg-[#1e3a8a] hover:bg-blue-600 text-white px-4 py-2 rounded-xl shadow-md transition-all"
         >
-          <RotateCcw className="w-4 h-4" />
-          Refresh
+          <RotateCcw className="w-4 h-4" /> Refresh
         </button>
       </div>
 
-      {/* Form Tambah/Edit */}
-      <div className="mb-10">
-        <h2 className="text-xl font-semibold text-gray-700 mb-3">
+      <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-200 mb-10">
+        <h2 className="text-xl font-semibold mb-4">
           {editData ? "Edit Informasi" : "Tambah Informasi"}
         </h2>
         <FormAdminInformation
@@ -96,42 +90,45 @@ export default function AdminInformation() {
         />
       </div>
 
-      {/* Tabel Data */}
       {loading ? (
-        <p className="text-gray-500">Memuat data...</p>
+        <div className="text-center py-12 text-gray-500 text-lg">Memuat data...</div>
       ) : data.length === 0 ? (
-        <p className="text-gray-500">Tidak ada data informasi ditemukan.</p>
+        <div className="text-center py-12 text-gray-500 text-lg">Tidak ada data informasi ditemukan.</div>
       ) : (
-        <div className="overflow-x-auto bg-white rounded-xl shadow border border-gray-200">
-          <table className="min-w-full text-sm text-left">
-            <thead className="bg-gray-100 text-gray-700 font-semibold">
+        <div className="overflow-x-auto rounded-2xl shadow-lg border border-gray-200">
+          <table className="min-w-full divide-y divide-gray-200">
+            <thead className="bg-gradient-to-r from-gray-100 to-gray-200">
               <tr>
-                <th className="px-4 py-3 border">Judul</th>
-                <th className="px-4 py-3 border">Deskripsi</th>
-                <th className="px-4 py-3 border">Kategori</th>
-                <th className="px-4 py-3 border">Waktu</th>
-                <th className="px-4 py-3 border">Aksi</th>
+                <th className="px-6 py-4 text-left text-sm font-bold text-gray-700 uppercase">Judul</th>
+                <th className="px-6 py-4 text-left text-sm font-bold text-gray-700 uppercase">Deskripsi</th>
+                <th className="px-6 py-4 text-left text-sm font-bold text-gray-700 uppercase">Kategori</th>
+                <th className="px-6 py-4 text-left text-sm font-bold text-gray-700 uppercase">Waktu</th>
+                <th className="px-6 py-4 text-left text-sm font-bold text-gray-700 uppercase">Aksi</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="bg-white divide-y divide-gray-100">
               {data.map((info) => (
-                <tr key={info._id} className="border-t hover:bg-blue-50">
-                  <td className="px-4 py-2">{info.judul}</td>
-                  <td className="px-4 py-2">{info.isi}</td>
-                  <td className="px-4 py-2">{info.kategori}</td>
-                  <td className="px-4 py-2">
-                    {new Date(info.dibuatPada).toLocaleString()}
+                <tr key={info._id} className="hover:bg-blue-50 transition">
+                  <td className="px-6 py-4 font-medium max-w-xs truncate" title={info.judul}>{info.judul}</td>
+                  <td className="px-6 py-4 max-w-xl truncate" title={info.isi}>{info.isi}</td>
+                  <td className="px-6 py-4">
+                    <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">
+                      {info.kategori}
+                    </span>
                   </td>
-                  <td className="px-4 py-2 space-x-2">
+                  <td className="px-6 py-4 text-sm text-gray-600 whitespace-nowrap">
+                    {new Date(info.dibuatPada).toLocaleString("id-ID")}
+                  </td>
+                  <td className="px-6 py-4 space-x-2">
                     <button
                       onClick={() => handleEdit(info)}
-                      className="text-blue-600 hover:underline text-sm"
+                      className="text-sm text-blue-600 hover:underline"
                     >
                       Edit
                     </button>
                     <button
                       onClick={() => handleDelete(info._id)}
-                      className="text-red-600 hover:underline text-sm"
+                      className="text-sm text-red-600 hover:underline"
                     >
                       Hapus
                     </button>

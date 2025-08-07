@@ -152,13 +152,14 @@ export default function AdminDashboard() {
 
             {/* Sidebar - Better proportions */}
             <aside className={`
-                fixed lg:static inset-y-0 left-0 z-50 lg:z-auto
-                w-64 bg-gradient-to-b from-blue-950 via-blue-900 to-blue-950 
+                fixed inset-y-0 left-0 z-50
+                w-64 bg-gradient-to-b from-blue-950 via-blue-950 to-blue-900 
                 text-white p-4 lg:p-6
-                flex flex-col justify-between shadow-2xl
+                flex flex-col justify-between shadow-md
                 transform transition-transform duration-300 ease-in-out
                 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
-            `}>
+                `}>
+
                 {/* Close button for mobile */}
                 <button
                     onClick={closeSidebar}
@@ -217,7 +218,7 @@ export default function AdminDashboard() {
                             handleLogout()
                             closeSidebar()
                         }}
-                        className="flex items-center gap-3 px-4 py-3 rounded-xl bg-red-800/40 hover:bg-red-600 transition-all duration-200 w-full group border border-red-500 hover:border-red-400"
+                        className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/60 hover:bg-red-600 transition-all duration-200 w-full group text-blue-950"
                     >
                         <LogOut className="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform" /> 
                         <span className="truncate font-medium">Keluar</span>
@@ -226,9 +227,9 @@ export default function AdminDashboard() {
             </aside>
 
             {/* Main Content */}
-            <main className="flex-1 w-full lg:w-auto overflow-hidden">
+            <main className="flex-1 w-full lg:w-auto overflow-hidden lg:pl-64">
                 {/* Header - More moderate sizing */}
-                <section className="bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500 text-white shadow-xl">
+                <section className="bg-white                                                              text-white shadow-xl">
                     <div className="p-4 lg:p-6">
                         <div className="flex items-center justify-between gap-6">
                             {/* Left side - Menu button and Title */}
@@ -242,13 +243,13 @@ export default function AdminDashboard() {
                                 </button>
                                 
                                 <div className="min-w-0 flex-1">
-                                    <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight drop-shadow-lg leading-tight mb-2">
+                                    <h1 className="text-gray-800 text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight drop-shadow-lg leading-tight mb-2">
                                         {window.location.pathname === "/tambah-berita" 
                                             ? "Tambah Berita" 
                                             : "Permohonan Informasi Publik"
                                         }
                                     </h1>
-                                    <p className="text-sm sm:text-base lg:text-lg text-blue-100 leading-relaxed opacity-90">
+                                    <p className="text-sm sm:text-base lg:text-lg text-gray-800 leading-relaxed opacity-90">
                                         {window.location.pathname === "/tambah-berita"
                                             ? "Form untuk menambahkan berita baru"
                                             : "Dashboard untuk mengelola data permohonan masuk"
@@ -258,11 +259,11 @@ export default function AdminDashboard() {
                             </div>
                             
                             {/* Right side - Stats with better proportions */}
-                            <div className="text-center flex-shrink-0 bg-white/15 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/20 shadow-lg">
-                                <p className="text-xs lg:text-sm font-medium text-blue-100 mb-2 opacity-90">
+                            <div className="text-center flex-shrink-0 bg-gradient-to-b from-blue-950 via-blue-950 to-blue-900  backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/20 shadow-lg">
+                                <p className="text-xs lg:text-sm font-medium text-white mb-2 opacity-90">
                                     Total Permohonan
                                 </p>
-                                <p className="text-2xl sm:text-3xl lg:text-4xl font-bold drop-shadow-lg">
+                                <p className="text-white text-2xl sm:text-3xl lg:text-4xl font-bold drop-shadow-lg">
                                     {requests.length}
                                 </p>
                             </div>
@@ -274,7 +275,7 @@ export default function AdminDashboard() {
                     <>
                         {/* Stat Cards - More reasonable sizing */}
                         <section className="p-4 lg:p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 bg-white border-b shadow-sm">
-                            <div className="bg-gradient-to-br from-blue-100 to-blue-200 p-5 lg:p-6 rounded-2xl flex items-center gap-4 shadow-lg hover:shadow-xl transition-shadow border border-blue-200">
+                            <div className="bg-gray-200 p-5 lg:p-6 rounded-2xl flex items-center gap-4 shadow-lg hover:shadow-xl transition-shadow">
                                 <div className="bg-blue-600 p-3 rounded-xl shadow-md">
                                     <Users className="text-white w-6 h-6" />
                                 </div>
@@ -284,7 +285,7 @@ export default function AdminDashboard() {
                                 </div>
                             </div>
                             
-                            <div className="bg-gradient-to-br from-green-100 to-green-200 p-5 lg:p-6 rounded-2xl flex items-center gap-4 shadow-lg hover:shadow-xl transition-shadow border border-green-200">
+                            <div className="bg-gray-200 p-5 lg:p-6 rounded-2xl flex items-center gap-4 shadow-lg hover:shadow-xl transition-shadow ">
                                 <div className="bg-green-600 p-3 rounded-xl shadow-md">
                                     <Clock className="text-white w-6 h-6" />
                                 </div>
@@ -300,7 +301,7 @@ export default function AdminDashboard() {
                                 </div>
                             </div>
                             
-                            <div className="bg-gradient-to-br from-yellow-100 to-yellow-200 p-5 lg:p-6 rounded-2xl flex items-center gap-4 shadow-lg hover:shadow-xl transition-shadow border border-yellow-200 sm:col-span-2 lg:col-span-1">
+                            <div className="bg-gray-200 p-5 lg:p-6 rounded-2xl flex items-center gap-4 shadow-lg hover:shadow-xl transition-shadow  sm:col-span-2 lg:col-span-1">
                                 <div className="bg-yellow-600 p-3 rounded-xl shadow-md">
                                     <Info className="text-white w-6 h-6" />
                                 </div>
@@ -317,7 +318,7 @@ export default function AdminDashboard() {
                         <div className="p-4 lg:p-6 bg-white shadow-sm border-b">
                             <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-4">
                                 <div className="flex items-center gap-3 flex-1 lg:max-w-md">
-                                    <div className="bg-blue-100 p-2 rounded-lg">
+                                    <div className="bg-blue-200 p-2 rounded-lg">
                                         <Search className="w-5 h-5 text-blue-600" />
                                     </div>
                                     <input
@@ -330,7 +331,7 @@ export default function AdminDashboard() {
                                 </div>
                                 
                                 <div className="flex items-center gap-3 flex-1 lg:max-w-md">
-                                    <div className="bg-green-100 p-2 rounded-lg">
+                                    <div className="bg-green-200 p-2 rounded-lg">
                                         <Filter className="w-5 h-5 text-green-600" />
                                     </div>
                                     <select
@@ -348,7 +349,7 @@ export default function AdminDashboard() {
                                 
                                 <button
                                     onClick={fetchData}
-                                    className="flex-shrink-0 bg-blue-600 text-white hover:bg-blue-700 transition-all flex items-center gap-2 px-6 py-3 rounded-xl text-sm lg:text-base font-medium shadow-lg hover:shadow-xl"
+                                    className="flex-shrink-0 bg-[#1e3a8a] hover:bg-blue-600 text-white transition-all flex items-center gap-2 px-6 py-3 rounded-xl text-sm lg:text-base font-medium shadow-lg hover:shadow-xl"
                                 >
                                     <RotateCcw className="w-4 h-4" /> 
                                     <span>Refresh</span>
@@ -358,11 +359,11 @@ export default function AdminDashboard() {
 
                         {/* Table - Balanced sizing */}
                         <div className="p-4 lg:p-6">
-                            <div className="rounded-2xl border-2 border-gray-200 bg-white shadow-xl overflow-hidden">
+                            <div className="rounded-2xl border-2 border-gray-300 bg-white shadow-xl overflow-hidden">
                                 <div className="overflow-x-auto">
                                     <Table className="min-w-full">
                                         <TableHeader>
-                                            <TableRow className="bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 border-b-2 border-gray-300">
+                                            <TableRow className="bg-gradient-to-r from-gray-300 to-gray-200 text-gray-700 border-b-2 border-gray-300">
                                                 <TableHead className="text-center whitespace-nowrap px-4 py-4 font-bold">No</TableHead>
                                                 <TableHead className="whitespace-nowrap px-4 py-4 font-bold">Nama</TableHead>
                                                 <TableHead className="whitespace-nowrap px-4 py-4 font-bold">Email</TableHead>

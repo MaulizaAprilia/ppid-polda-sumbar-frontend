@@ -59,7 +59,7 @@ export default function Header({ onLoginClick, isLoggedIn, onLogout }: HeaderPro
               <button
                 key={item.section}
                 onClick={() => handleNavigation(item.section)}
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+                className="text-gray-700 hover:text-blue-500 font-medium transition-colors duration-200"
               >
                 {item.label}
               </button>
@@ -77,7 +77,7 @@ export default function Header({ onLoginClick, isLoggedIn, onLogout }: HeaderPro
               </div>
             ) : (
               <Button
-                className="bg-blue-600 hover:bg-blue-700 text-white transition duration-200"
+                className="bg-[#1e3a8a] hover:bg-blue-600 text-white transition duration-200"
                 onClick={onLoginClick}
               >
                 <User className="w-4 h-4 mr-2" />
@@ -123,7 +123,7 @@ export default function Header({ onLoginClick, isLoggedIn, onLogout }: HeaderPro
                   </>
                 ) : (
                   <Button
-                    className="bg-blue-600 hover:bg-blue-700 w-fit text-white mt-2"
+                    className="bg-gradient-to-r from-blue-950 to-blue-500 hover:bg-blue-600 w-fit text-white mt-2"
                     onClick={onLoginClick}
                   >
                     <User className="w-4 h-4 mr-2" />

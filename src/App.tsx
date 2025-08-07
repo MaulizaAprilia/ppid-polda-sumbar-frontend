@@ -14,6 +14,8 @@ import KeamananData from "./components/KeamananData"
 import RequestForm from "./components/RequestForm"
 import Contact from "./components/Contact"
 import AdminInformation from "./components/AdminInformation"
+import AdminDashboardNews from "./components/DashboardAdminNews"
+import News from "./components/News"; 
 
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
       <Routes>
         {/* ❌ Halaman admin TANPA Header & Footer */}
         <Route path="/dashboard" element={<AdminDashboard />} />
+        <Route path="tambah-berita" element={<AdminDashboardNews />} />
+        <Route path="/informasi" element={<AdminInformation />} />
 
         {/* ✅ Semua halaman lain dengan Header & Footer */}
         <Route path="/" element={<Layout />}>
@@ -35,7 +39,7 @@ function App() {
           <Route path="keamanandata" element={<KeamananData />} />
           <Route path="permohonan" element={<RequestForm />} />
           <Route path="kontak" element={<Contact />} />
-          <Route path="/informasi" element={<AdminInformation />} />
+          <Route path="berita" element={<News />} />
 
         </Route>
       </Routes>
